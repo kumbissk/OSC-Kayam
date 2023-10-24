@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [PageController::class, 'index'])->name('index');
+
+Auth::routes();
+
+Route::controller(DashboardController::class)->group(function () {
+
+    Route::get('/dashboard/home', 'index')->name('dashboard');
+
+
 });
