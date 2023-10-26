@@ -12,8 +12,19 @@ class DashboardController extends Controller
         return view('dashboard.index');
     }
 
-    // public function boarder(): View
-    // {
-    //     return view('dashboard.boarder');
-    // }
+    public function boarders(): View
+    {
+        return view('dashboard.pensionnaires');
+    }
+
+    public function listBoarders(): View
+    {
+        return view('dashboard.listPensionnaires');
+    }
+
+    public function showBoarders(): View
+    {
+        return view('dashboard.showPensionnaires');
+    }
+
 }

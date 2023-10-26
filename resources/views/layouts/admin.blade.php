@@ -77,12 +77,11 @@
                         </a>
                     </li>
                     <li class="pc-item">
-                        <a href="" class="pc-link ">
+                        <a href="{{ route('pensionnaires') }}" class="pc-link ">
                             <span class="pc-micon"><i
                                 class="material-icons-two-tone">edit</i>
                             </span>
                             <span class="pc-mtext">Pensionnaires</span>
-                
                         </a>
                     </li> 
                 </ul>
