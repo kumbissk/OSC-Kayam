@@ -99,7 +99,7 @@
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i data-feather="user"></i></span>
-                  <input type="number" class="form-control" placeholder="Nombre enfants" name="nombre_enfants"
+                  <input type="number" class="form-control" placeholder="Nombre enfants" name="nombre_enfants" id="nombre_enfants"
                     autocomplete="name" autofocus>
                     @if ($errors->has('nombre_enfants'))
                       <span class="invalid-feedback d-block" style="text-align: center">
@@ -110,18 +110,18 @@
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i data-feather="user"></i>Tranche d'age enfants</span>
-                <select id="tranche_age" name="tranche_age_enfants" class="form-control" disabled>
-                    <option value="Nourrisson">Nourrisson</option>
-                    <option value="Tout-petit">Tout-petit</option>
-                    <option value="Enfant d'âge préscolaire">Enfant d'âge préscolaire</option>
-                    <option value="Enfant d'âge scolaire">Enfant d'âge scolaire</option>
-                    <option value="Adolescent">Adolescent</option>
-                </select>
-                @if ($errors->has('tranche_age_enfants'))
-                    <span class="invalid-feedback d-block" style="text-align: center">
-                        <strong>{{ $errors->first('tranche_age_enfants') }}</strong>
-                    </span>
-                @endif
+                    <select id="tranche_age" name="tranche_age_enfants" class="form-control" id="tranche_age_enfants">
+                        <option value="Nourrisson">Nourrisson</option>
+                        <option value="Tout-petit">Tout-petit</option>
+                        <option value="Enfant d'âge préscolaire">Enfant d'âge préscolaire</option>
+                        <option value="Enfant d'âge scolaire">Enfant d'âge scolaire</option>
+                        <option value="Adolescent">Adolescent</option>
+                    </select>
+                    @if ($errors->has('tranche_age_enfants'))
+                        <span class="invalid-feedback d-block" style="text-align: center">
+                            <strong>{{ $errors->first('tranche_age_enfants') }}</strong>
+                        </span>
+                    @endif
                 </span>
               </div>
               <div class="input-group mb-3">
@@ -162,7 +162,6 @@
                 @if(session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
-                
             </form>
             </div>
           </div>

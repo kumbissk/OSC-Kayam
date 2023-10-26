@@ -92,7 +92,7 @@ class BoarderController extends Controller
     public function show(Boarder $boarder)
     {
         $boarder = Boarder::find($boarder);
-        return view('dashboard.showPensionnaires');
+        return view('dashboard.showPensionnaires', ['boarder'=>$boarder[0]]);
     }
 
     public function showData(Boarder $boarder)

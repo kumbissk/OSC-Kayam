@@ -21,6 +21,22 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nombreEnfantsInput = document.getElementById("nombre_enfants");
+            const trancheAgeInput = document.getElementById("tranche_age_enfants");
+        
+            nombreEnfantsInput.addEventListener("change", function() {
+                if (parseInt(nombreEnfantsInput.value) === 1) {
+                    trancheAgeInput.removeAttribute("disabled");
+                } else {
+                    trancheAgeInput.setAttribute("disabled", "true");
+                    trancheAgeInput.value = ""; // Réinitialisez la valeur du champ si le nombre d'enfants n'est pas égal à 1.
+                }
+            });
+        });
+    </script> 
 </head>
 
 <body>
@@ -137,7 +153,8 @@
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
 
     <!-- Warning Section Ends -->
     <!-- Required Js -->
@@ -145,7 +162,6 @@
     <script src="{{ asset('admin/assets/js/plugins/bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/plugins/feather.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/pcoded.min.js') }}"></script>
-
 </body>
 
 </html>
